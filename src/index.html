@@ -75,7 +75,7 @@
                 <div class="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5 inner-width mx-auto">
                     <div class="about-card active-world-short relative flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer">
                         <img src="/images/planet-02.png" alt="The Upside Down" class="absolute w-full h-full object-cover rounded-[24px]" />
-                        <h3 class="short-title font-bold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">The Upside Down</h3>
+                        <h3 class="w-full short-title font-bold sm:text-[26px] text-[18px] text-white absolute z-0 lg:rotate-[-90deg] lg:origin-[0,0]">The Upside Down</h3>
                         <div class="full-title hidden absolute bottom-0 p-8 justify-start w-full flex-col bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
                             <div class="flex justify-center items-center w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]">
                                 <img src="/images/headset.svg" alt="headset" class="w-1/2 h-1/2 object-contain" />
@@ -237,7 +237,7 @@
                         <img src="/images/people-03.png" alt="people" class="w-full h-full">
                     </div>
 
-                    <div  class="absolute top-[40%] left-[20%] w-[220px] h-[170px] p-[6px] rounded-[24px] bg-[#5d6680]">
+                    <div  class="absolute top-[40%] hidden sm:block left-0 lg:left-[20%] w-[220px] h-[170px] p-[6px] rounded-[24px] bg-[#5d6680]">
                         <div id="world-01" class="relative">
                             <img src="/images/world-01.png" alt="the upside down" class="w-full h-full rounded-[24px] object-cover" />
                             <div class="absolute bottom-[16px] left-[16px] flex flex-col z-10">
@@ -257,12 +257,50 @@
                                 </div>
                                 <div class="pt-[12px] text-white text-[18px] leading-[20px] font-bold">The Upside Down</div>
                             </div>
+                            <div class="absolute top-0 left-0">
+                                <img src="/images/world_bg_01.png"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="absolute top-[5%] hidden sm:block right-[20%] w-[220px] h-[170px] p-[6px] rounded-[24px] bg-[#5d6680]">
+                        <div id="world-02" class="relative">
+                            <img src="/images/world-02.png" alt="the upside down" class="w-full h-full rounded-[24px] object-cover" />
+                            <div class="absolute bottom-[16px] left-[16px] flex flex-col z-10">
+                                <div class="flex flex-row items-center ">
+                                    <div class="relative w-[48px] h-[24px]">
+                                        <div class="absolute left-0 top-0 bottom-0 h-[24px] w-[24px] z-50">
+                                            <img src="/images/people-04.png" alt="people" class="object-cover w-full h-full"/>
+                                        </div>
+                                        <div class="absolute left-[12px] top-0 bottom-0 h-[24px] w-[24px] z-40">
+                                            <img src="/images/people-05.png" alt="people" class="object-cover w-full h-full"/>
+                                        </div>
+                                        <div class="absolute left-[24px] top-0 bottom-0 h-[24px] w-[24px] z-30">
+                                            <img src="/images/people-06.png" alt="people" class="object-cover w-full h-full"/>
+                                        </div>
+                                    </div>
+                                    <div class="ml-[8px] text-white font-semibold text-[14px] leading-[18px]" >+ 264 has joined</div>
+                                </div>
+                                <div class="pt-[12px] text-white text-[18px] leading-[20px] font-bold">The Upside Down</div>
+                            </div>
+                            <div class="absolute top-0 left-0">
+                                <img src="/images/world_bg_02.png"/>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
+        <!-- insight -->
+        <section class="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
+            <div class="inner-width mx-auto flex flex-col ">
+                <p class="text-center font-normal text-[14px] leading-[18px] text-secondary-white animate__animated animate__fadeInDown">| Insight</p>
+                <h2 class="text-center relative z-10 mt-[8px] font-bold md:text-[64px] text-[40px] text-white ">Insight about metaverse</h2>
+            </div>
+        </section>
+
 
     </div>
     <script src="/src/js/index.js" ></script>
