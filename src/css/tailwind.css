@@ -26,9 +26,4 @@
     @apply lg:flex-[0.5] flex-[2]
 }
 
-.test {
-    visibility: hidden;
-}
-
-
 @tailwind utilities;

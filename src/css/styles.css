@@ -33,13 +33,18 @@ html, body {
     filter: blur(125px);
 }
 
-.hero-gradient {
-    background: linear-gradient(
-            97.86deg,
-            #a509ff 0%,
-            #34acc7 53.65%,
-            #a134c7 100%
+.gradient-06 {
+    background-image: linear-gradient(
+            270deg,
+            hsl(295deg 76% 51%) 0%,
+            hsl(284deg 70% 73%) 26%,
+            hsl(257deg 70% 86%) 39%,
+            hsl(202deg 92% 90%) 50%,
+            hsl(215deg 77% 81%) 61%,
+            hsl(221deg 73% 70%) 74%,
+            hsl(220deg 76% 51%) 100%
     );
+    filter: blur(125px);
 }
 
 .gradient-02 {
@@ -84,6 +89,30 @@ html, body {
     );
 }
 
+.gradient-07 {
+    position: absolute;
+    width: 665px;
+    height: 640px;
+    right: -30%;
+    top: 0;
+
+    background: rgba(122, 235, 251, 0.35);
+    filter: blur(250px);
+    transform: rotate(-95.59deg);
+}
+
+.gradient-08 {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    left: -25%;
+    top: -15%;
+
+    background: rgba(37, 101, 225, 0.35);
+    filter: blur(125px);
+    transform: rotate(-87.51deg);
+}
+
 .feedback-gradient {
     position: absolute;
     width: 200px;
@@ -114,3 +143,26 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.hero-img {
+    --animate-duration: 1.5s;
+}
+
+.about-card {
+    opacity: 0;
+}
+
+.anim {
+    opacity: 0;
+}
+
+@keyframes animate__rollInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%,0,0) rotate(-120deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
