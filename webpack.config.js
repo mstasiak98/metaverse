@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
-    output: {path: path.resolve(__dirname, 'dist'), filename: 'bundle.js',},
+    output: {path: path.resolve(__dirname, 'dist'), filename: 'bundle.js', assetModuleFilename: 'src/assets/[name].[ext]'},
     module: {
         rules: [
             {
@@ -18,23 +18,8 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
             {
-                test: /\.(jpe?g|png|gif|svg|ico)$/i,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'images/'
-                    }
-                }]
-            },
-            {
-                test: /\.(html)$/,
-                use: {
-                    loader: 'html-loader',
-                    options: {
-                        attrs: ['img:src', 'link:href']
-                    }
-                }
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
+                type: 'asset/resource'
             }
         ],
     },
