@@ -1,3 +1,5 @@
+import './styles.css';
+
 const aboutWorldCardArray = document.querySelectorAll('.about-card');
 
 aboutWorldCardArray.forEach(function (i) {
@@ -9,7 +11,7 @@ aboutWorldCardArray.forEach(function (i) {
 
 const typingTexts = document.querySelectorAll('.typing-text');
 
-typingTextObservers = new IntersectionObserver((entries) => {
+let typingTextObservers = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.intersectionRatio > 0 && entry.target.innerHTML.length === 0) {
             typeTitle(entry.target.dataset.title, entry.target.id);
@@ -23,11 +25,11 @@ typingTexts.forEach(titleElement => {
 
 const elementsToAnimate = document.querySelectorAll('.anim');
 
-animationObservers = new IntersectionObserver((entries) => {
+let animationObservers = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.intersectionRatio > 0 && !entry.target.classList.contains('animate__animated') && !entry.target.classList.contains('about-card')) {
             const animation = entry.target.dataset.animation;
-            this.animate(entry.target, animation, delay);
+            animateContent(entry.target, animation, delay);
         }
     })
 })
@@ -36,14 +38,15 @@ elementsToAnimate.forEach(animationElement => {
     animationObservers.observe(animationElement);
 })
 
-const exploreSection = document.querySelector('.explore');
+const exploreSection = document.getElementById('explore');
 
-exploreObserver = new IntersectionObserver(  async (entry) => {
-    if(entry[0].intersectionRatio > 0){
+let exploreObserver = new IntersectionObserver(  async (entry) => {
+    const el = entry[0];
+    if(el.intersectionRatio > 0){
         const worlds = document.querySelectorAll('.about-card');
         for(let i = 0; i< worlds.length; i++) {
-            this.animate(worlds[i], 'fadeIn');
-            worlds[i].style[0] = 'opacity: 1';
+            animateContent(worlds[i], 'fadeIn');
+            worlds[i].style = 'opacity: 1';
             await delay(500);
         }
     }
@@ -79,7 +82,7 @@ function delay (time = 50) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function animate(element, animation, duration = 1, prefix = 'animate__') {
+function animateContent(element, animation, duration = 1, prefix = 'animate__') {
     new Promise((resolve, reject) => {
         const animationName = `${prefix}${animation}`;
         if(element.id === 'whats-new-img'){
@@ -88,7 +91,8 @@ function animate(element, animation, duration = 1, prefix = 'animate__') {
         }else {
             element.classList.add(`${prefix}animated`, animationName);
         }
-        element.style[0] = 'opacity: 1 !important';
+        element.setAttribute('opacity', '1');
+
         function handleAnimationEnd(event) {
             event.stopPropagation();
             resolve('Animation ended');
